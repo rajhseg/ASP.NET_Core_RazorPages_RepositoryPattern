@@ -1,6 +1,8 @@
 # ASP.NET_Core_RazorPages_RepositoryPattern
 This Repo consists of sample ASP.NET Core Razor page Development including sample like Create, Update, Delete, FileUpload samples with Repository Pattern
 
+Following key **"JwtConfig:key": "CuYM000OLlMQG6VVLp1OH7Xzyw3eHuw1qvUC5dcGt8FLI"** in **appsettings json** should be placed or stored under secured environment like (KeyValut)
+
 Repo consists of Following features
 1. JWT Authentication
 2. Global Exception Handler
