@@ -3,6 +3,10 @@ This Repo consists of sample ASP.NET Core Razor page Development including sampl
 
 Following key **"JwtConfig:key": "CuYM000OLlMQG6VVLp1OH7Xzyw3eHuw1qvUC5dcGt8FLI"** in **appsettings json** should be placed or stored under secured environment like (KeyValut)
 
+Authentication Flow
+
+**Login -> tokengenerate store in session -> Middleware(token from session, assign auth header) -> (based on JWTConfig in program.cs) Authorize Attribute validate Authorization header.**
+
 Repo consists of Following features
 1. JWT Authentication
 2. Global Exception Handler
