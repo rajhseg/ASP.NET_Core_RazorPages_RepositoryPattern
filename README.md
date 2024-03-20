@@ -5,7 +5,14 @@ Following key **"JwtConfig:key": "CuYM000OLlMQG6VVLp1OH7Xzyw3eHuw1qvUC5dcGt8FLI"
 
 Authentication Flow
 
-**Login -> tokengenerate store in session -> Middleware(token from session, assign auth header) -> (based on JWTConfig in program.cs) Authorize Attribute validate the claims.**
+**
+-> Login 
+
+  -> tokengenerate store in session 
+    
+    -> Middleware(token from session, assign auth header) 
+    
+      -> (based on JWTConfig in program.cs) Authorize Attribute validate the claims.**
 
 Repo consists of Following features
 1. JWT Authentication
