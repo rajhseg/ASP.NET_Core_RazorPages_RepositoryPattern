@@ -8,7 +8,8 @@ Authentication Flow
 
     -> Login 
 
-      -> tokengenerate save actual token in DB and get the mapping token, store the mapping token in session 
+      -> tokengenerate save actual token in DB and get the mapping token, store the mapping 
+          token in session 
     
         -> Middleware(mapping token from session, and get the actual token, assign auth header) 
     
