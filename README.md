@@ -8,9 +8,9 @@ Authentication Flow
 
     -> Login 
 
-      -> tokengenerate store in session 
+      -> tokengenerate save actual token in DB and get the mapping token, store the mapping token in session 
     
-        -> Middleware(token from session, assign auth header) 
+        -> Middleware(mapping token from session, and get the actual token, assign auth header) 
     
           -> (based on JWTConfig in program.cs) Authorize Attribute validate the claims.**
 
