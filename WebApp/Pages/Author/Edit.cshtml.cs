@@ -1,5 +1,5 @@
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
+using ABC.Entities.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -57,7 +57,7 @@ namespace WebApp.Pages.Author
                 try
                 {
                     var photo_name = processUploadFile();
-                    await this.authorService.UpdateAuthor(new ABC.Models.Author { Id = id, Name = author.Name, PhotoName = photo_name });
+                    await this.authorService.UpdateAuthor(new ABC.Entities.Author { Id = id, Name = author.Name, PhotoName = photo_name });
                     await this.unitOfWork.CommitTransactionAsync(trans);
                     return RedirectToPage("index");
                 }

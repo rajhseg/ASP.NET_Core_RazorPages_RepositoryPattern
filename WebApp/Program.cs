@@ -1,8 +1,6 @@
-using Abc.AuthorLibrary;
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
-using ABC.BooksLibrary;
-using ABC.BusinessBase;
+using Abc.Infrastructure;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,18 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<DbContext, AbcContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("sql"), 
-                                                    x=>x.MigrationsAssembly("ABC.BusinessBase")), 
-                                                    contextLifetime:ServiceLifetime.Scoped);
-
-builder.Services.AddSingleton<IAuthorRepository, AuthorRepository>();
-builder.Services.AddSingleton<IBooksRepository, BookRepository>();
-builder.Services.AddSingleton<ITokenRepository, TokenRepository>();
-builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
-
-builder.Services.AddTransient<IAuthorService, AuthorService>();
-builder.Services.AddTransient<ITokenService, TokenService>();
-builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.RegisterRepositories(builder.Configuration.GetConnectionString("sql"));
+builder.Services.RegisterBusinessService();
 
 builder.Services.AddTransient<IUserInfoService, UserInfoService>();
 builder.Services.AddSingleton<IJwtAuthentication, JWTAuthentication>();

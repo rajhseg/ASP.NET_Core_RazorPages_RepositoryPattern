@@ -1,5 +1,5 @@
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
+using ABC.Entities.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

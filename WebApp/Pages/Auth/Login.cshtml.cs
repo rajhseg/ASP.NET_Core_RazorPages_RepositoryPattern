@@ -1,5 +1,5 @@
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
+using ABC.Entities.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -52,7 +52,7 @@ namespace WebApp.Pages.Auth
             
             using(var trans = await this.unitOfWork.BeginTransactionAsync()){
                 try{        
-                    var tokenData = new ABC.Models.Token();
+                    var tokenData = new ABC.Entities.Token();
                     tokenData.ActualToken = token;
                     tokenData.ClientToken = encodedToken;
                     tokenData.RefreshToken = refreshToken;

@@ -1,6 +1,6 @@
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
-using ABC.Models;
+using ABC.Entities.Interfaces;
+using ABC.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +49,7 @@ namespace WebApp.Pages.Book
             {
                 try
                 {
-                    await this.bookService.AddBook(new ABC.Models.Book { Title = book.Title, Description = book.Description, AuthorId = book.AuthorId });
+                    await this.bookService.AddBook(new ABC.Entities.Book { Title = book.Title, Description = book.Description, AuthorId = book.AuthorId });
                     await this.unitOfWork.CommitTransactionAsync(trans);
                     return RedirectToPage("Index");
                 }

@@ -1,6 +1,6 @@
-using Abc.AuthorLibrary;
+
 using Abc.BusinessService;
-using Abc.UnitOfWorkLibrary;
+using ABC.Entities.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -41,14 +41,14 @@ namespace WebApp.Pages.Author
             {
                 try
                 {
-                    List<ABC.Models.Book> _books = new List<ABC.Models.Book>();
+                    List<ABC.Entities.Book> _books = new List<ABC.Entities.Book>();
 
                     if (author.Books != null)
                     {
-                        _books.AddRange(author.Books.Select(x => new ABC.Models.Book { AuthorId = author.Id, Title = x.Title, Description = x.Description }));
+                        _books.AddRange(author.Books.Select(x => new ABC.Entities.Book { AuthorId = author.Id, Title = x.Title, Description = x.Description }));
                     }
 
-                    await this.authorService.AddAuthor(new ABC.Models.Author { Id = author.Id, Name = author.Name, Books = _books });
+                    await this.authorService.AddAuthor(new ABC.Entities.Author { Id = author.Id, Name = author.Name, Books = _books });
                    
                     // await this.unitOfWork.CommitAsync();
                     await this.unitOfWork.CommitTransactionAsync(trans);
