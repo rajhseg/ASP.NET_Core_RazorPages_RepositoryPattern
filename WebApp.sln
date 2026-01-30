@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{12E76B56-22D7-4B95-B3A1-B5E4BAD689BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC.Entities", "ABC.Entities\ABC.Entities.csproj", "{10238FA4-DC5B-67AB-06B6-61E63A756BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.BusinessService", "Abc.BusinessService\Abc.BusinessService.csproj", "{10A37A02-1691-D6F4-0E29-357F68360C1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC.ApplicationLayer", "ABC.ApplicationLayer\ABC.ApplicationLayer.csproj", "{10A37A02-1691-D6F4-0E29-357F68360C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Infrastructure", "Abc.Infrastructure\Abc.Infrastructure.csproj", "{B263E1F5-01E4-6F21-2009-0BBAE56EAB2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC.Infrastructure", "ABC.Infrastructure\ABC.Infrastructure.csproj", "{B263E1F5-01E4-6F21-2009-0BBAE56EAB2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

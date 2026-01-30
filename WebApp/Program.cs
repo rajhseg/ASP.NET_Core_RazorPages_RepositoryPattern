@@ -13,8 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.RegisterRepositories(builder.Configuration.GetConnectionString("sql"));
-builder.Services.RegisterBusinessService();
+
+builder.Services.RegisterApplicationLayer();
+builder.Services.RegisterInfrastructure(builder.Configuration);
+
 
 builder.Services.AddTransient<IUserInfoService, UserInfoService>();
 builder.Services.AddSingleton<IJwtAuthentication, JWTAuthentication>();
